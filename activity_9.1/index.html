@@ -4,7 +4,16 @@
   <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
   <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-</head>
+<style>
+    body{
+        margin: 0px;
+        
+    }
+    
+    
+    </style>
+    
+    </head>
 <body>
  
  <header class="mdc-top-app-bar">
@@ -20,7 +29,7 @@
     </section>
   </div>
 </header>
-
+<main class = "mdc-top-app-bar--fixed-adjust">
    <button class="mdc-button foo-button">
   <div class="mdc-button__ripple"></div>
   <span class="mdc-button__label">Button</span>
@@ -30,5 +39,6 @@
     mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
     
 </script>
+</main>
 </body>
 </html>
