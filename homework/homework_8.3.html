@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+     // we declare three varibales ul,input,and button so we can use them later we call them to add them to our list 
+        
+      const list = document.querySelector('ul');
+      const input = document.querySelector('input');
+      const button = document.querySelector('button');
+
+        // In this function we can see that the button.onclick just means it's called on when clicked on
+        // kind of like an event listner but we use the word button becaues we create a button on our html page
+        // the input value just means we add whatever we asked it ot add like eggs, milk, bread etc
+      button.onclick = function() {
+        let myItem = input.value;
+        input.value = '';
+
+          // in this part we created new elemts that are addded to our list with old javascript syntax
+          // the li is just the css button we created so the javascript can keep it on the list we created 
+          // the span is the amount of stuff we add to it
+          // the button is to add this to our button 
+          // all this creates we will show up on our list  
+        const listItem = document.createElement('li');
+        const listText = document.createElement('span');
+        const listBtn = document.createElement('button');
+
+          
+// this part is where we append the list text where well be able to see the list appear after we call the function
+        listItem.appendChild(listText);
+        listText.textContent = myItem;
+        listItem.appendChild(listBtn);
+        listBtn.textContent = 'Delete';
+        list.appendChild(listItem);
+
+        listBtn.onclick = function(e) {
+          list.removeChild(listItem);
+        }
+
+        console.log();
+      }
+        
+        
+    </script>
+  </body>
+</html>
